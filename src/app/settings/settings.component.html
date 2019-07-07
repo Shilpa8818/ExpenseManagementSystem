@@ -1,0 +1,41 @@
+
+<div class="addexpense">
+  <form [formGroup]="settingForm">
+    <div class="row">
+      <div class="col-9">
+          <div class="form-group">
+              <label>Total Budget</label>
+              <input type="text" formControlName="totalBudgetVal" class="form-control"  />
+              
+          </div>
+      </div>
+      <div class="col-3">
+          <button type="submit" class="btn btn-primary btn-block" (click)="updateTotalBudget()">
+              <div *ngIf="loading" class="spinner-border spinner-border-sm" role="status">
+                  <span class="sr-only">Loading...</span>
+              </div>
+              Update
+          </button>
+      </div>
+    </div>
+    </form>
+    <form [formGroup]="settingForm2">
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" formControlName="categoryName" class="form-control" />
+                
+            </div>
+        </div>
+        <div class="col-3">
+            <button  class="btn btn-primary btn-block" (click)="addCategory()">
+                <div *ngIf="loadingAdd" class="spinner-border spinner-border-sm" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                Add
+            </button>
+        </div>
+      </div>
+</form>
+</div>
